@@ -12,7 +12,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class ProductComponent implements OnInit {
   products = PRODUCTS;
-  url: String;
+  url: String = '';
   product: Product;
 
   constructor(
@@ -22,7 +22,6 @@ export class ProductComponent implements OnInit {
     private meta: Meta) {
     const id = this.route.snapshot.paramMap.get('id');
     this.product = this.findProductById(id);
-    this.url = `https://snipcart-angular-universal.herokuapp.com/${this.location.path()}`;
   }
 
   ngOnInit() { 
